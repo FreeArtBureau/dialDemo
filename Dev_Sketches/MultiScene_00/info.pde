@@ -16,19 +16,27 @@
  * Info :    Read more about this on the info tab.
 
  -------------------------
- LIBRARIES
+ LIBRARIES & FONTS
+
+ - Iosevka : https://github.com/be5invis/Iosevka
 
 
  -------------------------
  USE
- 1). Create a new file/new tab and paste your full sketch.
- 2). Enclose your sketch within a class named, Scene+number.
-     Eg. SceneOne, SceneTwo...
-3). Make sure you extend this class with "...extends Scene"
-4). Remove size() function in setup() and add :
-      - student = "yourName";
-      - title = "SketchName";
-5). See examples in tabs : sketch_01.pde / sketch_02.pde / sketch_03.pde
+   1). Create a new file/new tab and paste your full sketch.
+
+   2). Enclose your sketch within a class named, Scene+number.
+       Eg. SceneOne, SceneTwo...
+
+   3). Make sure you extend this class with "...extends Scene"
+
+   4). Remove size() function in setup() and add :
+        - student = "yourName";
+        - title = "SketchName";
+        - sketchCode = "sketch_01.pde"; // name of tab
+
+   5). See examples in tabs : sketch_01.pde / sketch_02.pde / sketch_03.pde
+   6). See also Model tab for a  basic setup to copy from
 
 
  -------------------------

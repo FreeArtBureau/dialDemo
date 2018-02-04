@@ -16,8 +16,9 @@
  * Info :    Read more about this on the info tab.
 
  -------------------------
- LIBRARIES
+ LIBRARIES & FONTS
 
+ - Iosevka : https://github.com/be5invis/Iosevka
 
  -------------------------
  USE
