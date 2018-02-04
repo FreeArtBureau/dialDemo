@@ -10,6 +10,7 @@ class SceneFour extends Scene {
     title = "moiré_000";
     artist = " ";
     sketchCode = "sketch_04.pde";
+    code = loadPde(sketchCode);
   }
 
   void draw() {

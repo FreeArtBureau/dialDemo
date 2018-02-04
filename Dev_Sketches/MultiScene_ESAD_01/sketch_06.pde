@@ -12,6 +12,7 @@ class SceneSix extends Scene {
     title = "Motif ???";
     artist = " ";
     sketchCode = "sketch_06.pde";
+    code = loadPde(sketchCode);
   }
 
   void draw() {

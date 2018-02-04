@@ -12,6 +12,7 @@ class SceneFive extends Scene {
     title = "Square Anime ???";
     artist = " ";
     sketchCode = "sketch_05.pde";
+    code = loadPde(sketchCode);
 
   }
 

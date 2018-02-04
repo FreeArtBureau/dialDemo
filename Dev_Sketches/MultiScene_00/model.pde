@@ -10,8 +10,6 @@ class SceneZero extends Scene {
       artist = "Piet Mondrian";
       title = "New York Boogie";
       sketchCode = "sketch_01.pde";
-      code = loadPde(sketchCode);
-
     }
 
     void draw() {

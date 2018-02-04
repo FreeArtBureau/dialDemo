@@ -97,4 +97,33 @@ abstract class Scene {
 
   }
 
+  /*
+   * Display code for current sketch
+   *
+   */
+
+  public void showCode(){
+    textFont(codeFont);
+    fill(255);
+    pushMatrix();
+    translate(15, -50);
+    text(code,0,0);
+    popMatrix();
+  }
+
+  // Function to load String for the sketch and return this String value
+  public String loadPde(String _sketchName) {
+    String pde = "";
+    /*--------------------------------------------------------*/
+    // sketchPath gets the path to the Processing sketch folder
+    // [dataPath() gets the path to the data folder]
+    /*--------------------------------------------------------*/
+    String[] lines = loadStrings(sketchPath(_sketchName));
+    for (int i=0; i<lines.length; i++) {
+      // here we add each new String from lines to our pde String
+      pde+=lines[i]+"\n";
+    }
+    return pde;
+  }
+
 }

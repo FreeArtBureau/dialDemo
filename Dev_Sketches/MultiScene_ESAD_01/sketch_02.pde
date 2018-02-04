@@ -10,6 +10,7 @@ class SceneTwo extends Scene {
     title = "3D Fields";
     artist = " ";
     sketchCode = "sketch_02.pde";
+    code = loadPde(sketchCode);
 }
 
 /////////////////////////// DRAW ////////////////////////////

@@ -14,7 +14,8 @@ class SceneOne extends Scene {
     title = "Pull";
     artist = " ";
     sketchCode = "sketch_01.pde";
-     step=sceneHeight/num;
+    code = loadPde(sketchCode);
+    step=sceneHeight/num;
   }
 
   void draw() {

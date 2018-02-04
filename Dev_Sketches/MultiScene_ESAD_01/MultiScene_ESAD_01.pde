@@ -20,6 +20,9 @@ int screenSizeW = 1280;
 int screenSizeH = 760;
 
 boolean showSettings = true;
+boolean showCode = false;
+
+Timer myTimer;
 
 // Global settings for sketch : size
 void settings() {
@@ -29,6 +32,7 @@ void settings() {
 
 void setup() {
   background(0, 0, 33);
+  myTimer = new Timer(10000); // 10 second timer
   noCursor();
   addScenes();
   setupScenes();
@@ -41,10 +45,17 @@ void draw() {
   currentScene.draw();
   currentScene.showInfo();
 
-
   ///////////////////////////// > sequenced / key actions
+  if (myTimer.sequence(3000, 5000)) {
+    currentScene.showCode();
+  }
+
   if(showSettings){
     currentScene.showSettings();
+  }
+
+  if(showCode){
+    currentScene.showCode();
   }
 }
 

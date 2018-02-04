@@ -23,6 +23,7 @@
        currentSceneIndex++;
        currentScene = theScenes.get( theScenes.indexOf(currentScene)+1 );
      }
+     myTimer.reset();
    }
 
    if(keyCode == LEFT){
@@ -32,6 +33,7 @@
        currentScene = theScenes.get(
          theScenes.indexOf(currentScene)-1 );
      }
+     myTimer.reset();
    }
 
    if(key == 'r'){
@@ -41,4 +43,8 @@
    if(key == 'i'){
     showSettings = !showSettings;
    }
+
+     if(key == 'd'){
+     showCode = !showCode;
+    }
  }
