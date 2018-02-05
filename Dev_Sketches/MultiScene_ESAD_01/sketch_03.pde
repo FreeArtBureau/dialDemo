@@ -4,7 +4,7 @@
 
 
 class SceneThree extends Scene {
-  float speed=0.005;
+  float speed;
 
   void setup() {
     student = "Arnaud Chemin";
@@ -12,15 +12,14 @@ class SceneThree extends Scene {
     artist = " ";
     sketchCode = "sketch_03.pde";
     code = loadPde(sketchCode);
+    speed=0;
   }
 
   void draw() {
       background(0);
-      int a = 0;
+      noStroke();
+      float a = 0;
       for (int i=800; i>0; i-=30) {
-          a++;
-          noStroke();
-
           pushMatrix();
           translate(sceneWidth/2, sceneHeight/2);
           rotate(speed/15);
@@ -31,8 +30,8 @@ class SceneThree extends Scene {
           }
           ellipse((i/2.5)-100,0, i, i);
           popMatrix();
-
-          speed += 0.015;
+          speed += 0.025;
+          a++;
         }
     }
 }
