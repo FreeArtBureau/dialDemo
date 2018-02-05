@@ -15,7 +15,7 @@
 
 ArrayList <Scene> theScenes;
 Scene currentScene = null;
-int currentSceneIndex = 0;
+int currentSceneIndex = 8;
 int screenSizeW = 1280;
 int screenSizeH = 760;
 
@@ -71,4 +71,7 @@ void addScenes() {
   theScenes.add( new SceneSix() );
   theScenes.add( new SceneSeven() );
   theScenes.add( new SceneEight() );
+  theScenes.add( new SceneNine() );
+  theScenes.add( new SceneTen() );
+  theScenes.add( new SceneEleven() );
 }
