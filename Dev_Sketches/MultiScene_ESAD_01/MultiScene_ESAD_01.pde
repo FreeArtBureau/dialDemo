@@ -40,7 +40,7 @@ void setup() {
 
 
 void draw() {
-  background(0, 0, 33);
+  background(0, 0, 33); // Do I add this ?
 
   currentScene.draw();
   currentScene.showInfo();

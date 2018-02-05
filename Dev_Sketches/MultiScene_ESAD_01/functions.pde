@@ -24,6 +24,7 @@
        currentScene = theScenes.get( theScenes.indexOf(currentScene)+1 );
      }
      myTimer.reset();
+     background(0, 0, 33);
    }
 
    if(keyCode == LEFT){
@@ -34,6 +35,7 @@
          theScenes.indexOf(currentScene)-1 );
      }
      myTimer.reset();
+     background(0, 0, 33);
    }
 
    if(key == 'r'){
