@@ -74,4 +74,14 @@ void addScenes() {
   theScenes.add( new SceneNine() );
   theScenes.add( new SceneTen() );
   theScenes.add( new SceneEleven() );
+  theScenes.add( new SceneTwelve() );
+  theScenes.add( new SceneThirteen() );
+  theScenes.add( new SceneFourteen() );
+  theScenes.add( new SceneFifteen() );
+  theScenes.add( new SceneSixteen() );
+  theScenes.add( new SceneSeventeen() );
+  theScenes.add( new SceneEighteen() );
+  theScenes.add( new SceneNineteen() );
+  theScenes.add( new SceneTwenty() );
+
 }

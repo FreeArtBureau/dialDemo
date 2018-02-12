@@ -10,7 +10,7 @@ class SceneOne extends Scene {
   int num = 20;
 
   void setup() {
-    student = "Lucie Billot";
+    student = "Lucile Billot";
     title = "Pull";
     artist = " ";
     sketchCode = "sketch_01.pde";
