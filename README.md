@@ -14,6 +14,7 @@ Interactive installation for ésad d'Amiens students 2017/19.
 * Student Sketches
 * Dev_Sketches
 * Final Application
+* Tools
 
 ## Install
 
