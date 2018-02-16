@@ -83,5 +83,6 @@ void addScenes() {
   theScenes.add( new SceneEighteen() );
   theScenes.add( new SceneNineteen() );
   theScenes.add( new SceneTwenty() );
+  theScenes.add( new SceneTwentyOne() );
 
 }

@@ -1,5 +1,5 @@
 /**
- * Sketch : Empty Scene : Model
+ * Sketch : Lucile Billot
  */
 
 class SceneFifteen extends Scene {
