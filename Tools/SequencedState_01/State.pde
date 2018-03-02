@@ -15,6 +15,7 @@ public class MainTitle implements State {
     theTitle = new Text();
     println("State 1 : This is the main menu");
   }
+   
 
   @Override
     public void executeState() {
@@ -60,11 +61,13 @@ public class DisplaySketch implements State {
     println("State 3 : We are now displaying the sketch dialed");
   }
 
+
   @Override
     public void executeState() {
-    if (theTimer.sequence(1000, 2000)) {  
+    if (theTimer.sequence(1000, 3000)) {  
       theMsg.displayText(width/2, height/2, 33, "VOUS AVEZ COMPOSÉ \n 123");
-    }else {
+    }
+    if (theTimer.sequence(3000, 9000)) { 
       fill(200, 255, 0);
       noStroke();
       ellipse(width/2 + cos(frameCount*0.03) * width/4, height/2, sin(frameCount*0.20)*75, sin(frameCount*0.15)*75);
@@ -84,6 +87,7 @@ public class StateManager implements State {
   public State getState() {
     return this.myState;
   }
+
   @Override
     public void executeState() {
     this.myState.executeState();

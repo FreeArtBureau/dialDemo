@@ -7,7 +7,7 @@
  * Author : mw_2018
  *
  * Summary : Used for changing the state for an object
- *           at runtime.Good for implementing different
+ *           at runtime. Good for implementing different
  *           menus for a sequenced interactive system
  *           & avoiding long if/else expressions.
  *
