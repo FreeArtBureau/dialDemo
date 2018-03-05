@@ -20,7 +20,7 @@ class SceneNineteen extends Scene {
       //rectMode(CENTER);
       fill(30);
       stroke(220);
-      translate(screenSizeW/2, screenSizeH/2);
+      translate(screenSizeW/2, screenSizeH/2.3);
       for(int i = 0; i <= 100; i++){
         float x = map(i, 1, 50, 100, -50) + 20 * sin(frameCount * 0.09 + i * PI / 24);
         float y = map(i, 1, 50, -50, 100) + 20 * cos(frameCount * 0.09 + i * PI / 24); ;

@@ -17,8 +17,9 @@ class SceneFour extends Scene {
     background(0);
 
     circles(sceneWidth/2-100, sceneHeight/2, 0.025, 100);
-    circles(sceneWidth/2+50, sceneHeight/1.3, 0.05, 300);
+    circles(sceneWidth/2+25, sceneHeight/1.4, 0.035, 300);
     circles(sceneWidth/2, sceneHeight/3, 0.015, 200);
+    circles(sceneWidth/2-250, sceneHeight/2-100, 0.005, 300);
 
   }
 

@@ -15,7 +15,7 @@
 
 ArrayList <Scene> theScenes;
 Scene currentScene = null;
-int currentSceneIndex = 8;
+int currentSceneIndex =22;
 int screenSizeW = 1280;
 int screenSizeH = 760;
 
@@ -33,13 +33,14 @@ void settings() {
 void setup() {
   background(0, 0, 33);
   myTimer = new Timer(10000); // 10 second timer
-  noCursor();
+  //noCursor();
   addScenes();
   setupScenes();
 }
 
 
 void draw() {
+  pushStyle();
   background(0, 0, 33); // Do I add this ?
 
   currentScene.draw();
@@ -57,6 +58,7 @@ void draw() {
   if(showCode){
     currentScene.showCode();
   }
+  popStyle();
 }
 
 
@@ -84,5 +86,16 @@ void addScenes() {
   theScenes.add( new SceneNineteen() );
   theScenes.add( new SceneTwenty() );
   theScenes.add( new SceneTwentyOne() );
+  theScenes.add( new SceneTwentyTwo() );
+  theScenes.add( new SceneTwentyThree() );
+  theScenes.add( new SceneTwentyFour() );
+  theScenes.add( new SceneTwentyFive() );
+  theScenes.add( new SceneTwentySix() );
+  theScenes.add( new SceneTwentySeven() );
+  theScenes.add( new SceneTwentyEight() );
+  theScenes.add( new SceneTwentyNine() );
+  theScenes.add( new SceneThirty() );
+  theScenes.add( new SceneThirtyOne() );
+  theScenes.add( new SceneThirtyTwo() );
 
 }
