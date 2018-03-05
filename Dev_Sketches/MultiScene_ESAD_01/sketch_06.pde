@@ -28,7 +28,7 @@ class SceneSix extends Scene {
         translate(x, y);
         rotate(TWO_PI * n);
         scale(n);
-        rect(0, 0, 3, 8);
+        rect(0, 0, 5, 40);
         popMatrix();
       }
     }

@@ -97,5 +97,12 @@ void addScenes() {
   theScenes.add( new SceneThirty() );
   theScenes.add( new SceneThirtyOne() );
   theScenes.add( new SceneThirtyTwo() );
+  theScenes.add( new SceneThirtyThree() );
+  theScenes.add( new SceneThirtyFour() );
+  theScenes.add( new SceneThirtyFive() );
+  theScenes.add( new SceneThirtySix() );
+  theScenes.add( new SceneThirtySeven() );
+  theScenes.add( new SceneThirtyEight() );
+  theScenes.add( new SceneThirtyNine() );
 
 }

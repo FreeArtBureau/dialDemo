@@ -37,7 +37,7 @@ void draw() {
 void myCross(float _x, float _y, float _len, color _c){
   noFill();
   
-  stroke(_c, 20, 20);
+  stroke(_c, 100, 100);
   line(-_len, -_len, _len, _len);
   line(-_len, _len, _len, -_len);
   

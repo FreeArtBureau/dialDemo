@@ -53,7 +53,7 @@ void setup() {
 
 
 void draw() {
-  pushStyle();
+  //pushStyle();
   background(0, 0, 33);
   currentState.executeState();
   stateListener();
@@ -65,7 +65,7 @@ void draw() {
   if (showCode) {
     currentScene.showSettings();
   }
-  popStyle();
+  //popStyle();
 }
 
 
