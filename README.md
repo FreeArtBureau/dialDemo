@@ -7,7 +7,7 @@
 
 ## Introduction
 
-Interactive installation for ésad d'Amiens students 2017/19.
+Interactive installation for ésad d'Amiens students 2017/18.
 
 ## Contents
 
