@@ -7,7 +7,7 @@
 
 ## Introduction
 
-Interactive installation for ésad d'Amiens students 2017/19.
+Interactive installation for ésad d'Amiens students 2017/18.
 
 ## Contents
 
@@ -24,7 +24,7 @@ https://processing.org/
 
 ## Contact & Sundries
 
-* mwebster@fabprojects.codes
+* mw@fabprojects.codes
 * Version v0.2
 * Tools used : Processing
 
