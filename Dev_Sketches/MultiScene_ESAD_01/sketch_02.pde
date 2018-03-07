@@ -16,7 +16,7 @@ class SceneTwo extends Scene {
 /////////////////////////// DRAW ////////////////////////////
 
 void draw() {
-  background(0);
+  background(0,0,33);
   noiseDetail(2, 0.73);
   int numX = 125;
   int numY = 70;

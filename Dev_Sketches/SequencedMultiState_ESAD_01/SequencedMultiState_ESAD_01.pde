@@ -65,7 +65,7 @@ void setup() {
 
 void draw() {
   //pushStyle();
-  background(0, 0, 33);
+  background(0);
   currentState.executeState();
   stateListener();
 
@@ -90,4 +90,11 @@ void addScenes() {
   theScenes.add( new SceneThree() );
   theScenes.add( new SceneFour() );
   theScenes.add( new SceneFive() );
+  theScenes.add( new SceneSix() );
+  theScenes.add( new SceneSeven() );
+  theScenes.add( new SceneEight() );
+  theScenes.add( new SceneNine() );
+  theScenes.add( new SceneTen() );
+  theScenes.add( new SceneEleven() );
+  theScenes.add( new SceneTwelve() );
 }

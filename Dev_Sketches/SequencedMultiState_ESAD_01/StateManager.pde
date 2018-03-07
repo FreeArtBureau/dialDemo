@@ -70,14 +70,14 @@ public class ReceiveData implements State {
 
   @Override
     public void executeState() {
-    if (theTimer.sequence(1000, 2000)) {
-      theMsg.displayText(width/2, height/2, 33, "NICE MOVE...", true);
+    if (theTimer.sequence(500, 1500)) {
+      theMsg.displayText(width/2, height/2, 33, "BONJOUR...", true);
     }
-    if (theTimer.sequence(2000, 6000)) {
+    if (theTimer.sequence(2000, 4000)) {
       theMsg.displayText(width/2, height/2, 33, "COMPOSER VOTRE NUMÉRO \n LENTEMENT", true);
     }
 
-    if ((theTimer.sequence(15000, 23000))&&(dialedNumbers.size()<3)) {
+    if ((theTimer.sequence(13000, 10000))&&(dialedNumbers.size()<3)) {
       theMsg.displayText(width/2, height/2, 33, "IL RESTE 10 SECONDES...", true);
     }
 
@@ -90,11 +90,12 @@ public class ReceiveData implements State {
         dialedNumbers.add(s);
       }
     }
+
     pushStyle();
     fill(255);
-    theMsg.displayText(width/2, height/2, 33, "IL RESTE 10 SECONDES...", true);
-    theMsg.displayText(width/2, height/2+80, 100, buffer, true);
+    theMsg.displayText(width/2-30, height/2+90, 90, buffer);
     popStyle();
+
   }
 
   public int returnElapsedTime() {
@@ -164,10 +165,8 @@ public class DisplaySketch implements State {
     return this.type;
   }
 
-
   @Override
     public void executeState() {
-
     // draw sketch from chosen scene...
     if ((theScene != null)&&(!isError)) {
       theScene.draw();
@@ -205,7 +204,7 @@ public class DisplaySketch implements State {
   }
 }
 
-
+/*
 public class endMenu implements State {
 
   Text theMsg;
@@ -239,6 +238,7 @@ public class endMenu implements State {
     return t;
   }
 }
+*/
 
 /**
  * Displays random sequence of sketches until user interacts with dial

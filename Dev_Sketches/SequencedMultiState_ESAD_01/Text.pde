@@ -90,4 +90,19 @@ class Text {
     pg.endDraw();
     image(pg,0,0);
   }
+
+  /**
+   * Displays text without PGraphics
+   */
+  void displayText(float _x, float _y, float s, String tx) {
+    this.x=_x;
+    this.y =_y;
+    textFont(b, s);
+    textAlign(CENTER, CENTER);
+    fill(255);
+    pushMatrix();
+    translate(x, y);
+    text(tx, 0, 0);
+    popMatrix();
+  }
 }

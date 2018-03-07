@@ -21,10 +21,11 @@ void setupScenes() {
   }
 }
 
+/*
 void clearScene() {
   background(0, 0, 33);
 }
-
+*/
 void resetPort() {
   myPort.clear();
   myPort.stop();
@@ -118,7 +119,7 @@ void stateListener() {
   // If idle in any state other than MainTitle for over 20 seconds, return to main menu
   // !!!!!!!!! change  : THIS SEEMS TO BE A LITTLE ODD IN FUNCTIONING
 
-  if((s.equals("ReceiveData")&&(currentState.returnElapsedTime()>=10)) ){
+  if((s.equals("ReceiveData")&&(currentState.returnElapsedTime()>=30)) ){
     resetPort();
     initState();
   }
