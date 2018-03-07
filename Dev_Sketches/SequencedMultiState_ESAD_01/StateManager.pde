@@ -47,7 +47,7 @@ public class ReceiveData implements State {
 
   public ReceiveData() {
     theMsg = new Text();
-    theTimer = new Timer(19000);
+    theTimer = new Timer(25000);
     type = "ReceiveData";
     println("State 2 : We are now listening for incoming dial data");
     myPort.clear();
@@ -60,18 +60,18 @@ public class ReceiveData implements State {
 
   @Override
     public void executeState() {
-    if (theTimer.sequence(1000, 2000)) {  
+    if (theTimer.sequence(1000, 2000)) {
       theMsg.displayText(width/2, height/2, 33, "NICE MOVE...");
     }
-    if (theTimer.sequence(3000, 6000)) {  
+    if (theTimer.sequence(3000, 6000)) {
       theMsg.displayText(width/2, height/2, 33, "COMPOSER VOTRE NUMÉRO \n LENTEMENT");
     }
 
-    if ((theTimer.sequence(12000, 3000))&&(dialedNumbers.size()<3)) {  
-      theMsg.displayText(width/2, height/2, 33, "IL RESTE 5 SECONDES...");
+    if ((theTimer.sequence(13000, 23000))&&(dialedNumbers.size()<3)) {  
+      theMsg.displayText(width/2, height/2, 33, "IL RESTE 10 SECONDES...");
     }
 
-    if (myPort.available()>0) {      
+    if (myPort.available()>0) {
       int inByte = myPort.read();
       if (inByte != 10) {
         buffer = buffer + char(inByte);
@@ -79,9 +79,9 @@ public class ReceiveData implements State {
         String s = String.valueOf(c);
         dialedNumbers.add(s);
       }
-    } 
+    }
     pushStyle();
-    fill(255); 
+    fill(255);
     theMsg.displayText(width/2, height/2+80, 100, buffer);
     popStyle();
   }
@@ -114,7 +114,7 @@ public class DisplayMessage implements State {
     if (theTimer.sequence(1000, 2000)) {
       theMsg.displayText(width/2, height/2, 33, "Merci, bien reçu ;–)");
     }
-    if (theTimer.sequence(3000, 2000)) {  
+    if (theTimer.sequence(3000, 2000)) {
       theMsg.displayText(width/2, height/2, 33, "VOUS AVEZ COMPOSÉ \n"+ buffer);
     }
   }
@@ -216,7 +216,7 @@ public class endMenu implements State {
       theMsg.displayText(width/2, height/2, 33, "Voulez-vous composer un autre ?");
     }
 
-    if (theTimer.sequence(4000, 3000)) {  
+    if (theTimer.sequence(4000, 3000)) {
       theMsg.displayText(width/2, height/2, 33, "MERCI D'ATTENDRE LE MENU");
     }
   }

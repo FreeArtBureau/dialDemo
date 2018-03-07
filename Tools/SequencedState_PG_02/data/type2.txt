@@ -1,0 +1,1 @@
+L’installation vous permet de composer le numéro correspondant à chaque composition et ensuite de la visualiser. Sinon, l’installation fonctionne en mode automatique en choisissant une composition au hasard.
