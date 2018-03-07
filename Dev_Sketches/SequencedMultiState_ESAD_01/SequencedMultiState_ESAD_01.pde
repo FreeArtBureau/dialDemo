@@ -31,12 +31,16 @@ int screenSizeH = 760;
 
 boolean showSettings = true;
 boolean showCode = false;
-int sceneMaxSeconds = 8; // max seconds for playing sketch
+boolean autoMode = false;
+int sceneMaxSeconds = 8; // max seconds for playing sketch in interactive mode
+int myTimerMaxSeconds = 14000; // max seconds for playing sketch in auto mode
 
+Timer myTimer;
 
 /////////////////////////////////////// SETUP
 void settings() {
   size(screenSizeW, screenSizeH, P3D);
+  //fullScreen(P3D);
   smooth(4);
 }
 
@@ -45,9 +49,16 @@ void setup() {
   //noCursor(); // CURSOR ?
   String portName = Serial.list()[3];
   myPort = new Serial(this, portName, 9600);
-
+  myTimer = new Timer( myTimerMaxSeconds ); // 25000: 25 second timer
   addScenes();
   setupScenes();
+  /*  if(autoMode){
+       generateRandomSequence();
+       resetAll();
+     }else {
+       setupScenes();
+     }
+     */
   initState();
 }
 
@@ -62,9 +73,11 @@ void draw() {
   if (showSettings) {
     currentScene.showSettings();
   }
+  /*
   if (showCode) {
     currentScene.showSettings();
   }
+  */
   //popStyle();
 }
 

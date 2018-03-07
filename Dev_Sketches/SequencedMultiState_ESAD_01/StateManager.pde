@@ -14,14 +14,20 @@ public interface State {
 
 public class MainTitle implements State {
   Text theTitle;
+  Text mainMenuText;
+  Text mainMenuText2;
   Timer theTimer;
   String type;
 
   public MainTitle() {
     theTitle = new Text();
-    theTimer = new Timer(5000);
+    mainMenuText = new Text("type.txt");
+    mainMenuText2 = new Text("type2.txt");
+    theTimer = new Timer(20000);
     type = "MainTitle";
     println("State 1 : This is the main menu");
+    //generateRandomSequence();
+    //resetAll();
   }
 
   public String getType() {
@@ -30,7 +36,11 @@ public class MainTitle implements State {
 
   @Override
     public void executeState() {
-    theTitle.displayGreeting(width/2, height/2.3, 133);
+      theTitle.displayText(130, 140, 60, "DIAL A DEMO", false);
+        mainMenuText.drawTextByLetter(130, 220, 24);
+        if (theTimer.sequence(10000, 16000)) {
+          mainMenuText2.drawTextByLetter(130, 460, 24);
+        }
   }
 
   public int returnElapsedTime() {
@@ -61,14 +71,14 @@ public class ReceiveData implements State {
   @Override
     public void executeState() {
     if (theTimer.sequence(1000, 2000)) {
-      theMsg.displayText(width/2, height/2, 33, "NICE MOVE...");
+      theMsg.displayText(width/2, height/2, 33, "NICE MOVE...", true);
     }
-    if (theTimer.sequence(3000, 6000)) {
-      theMsg.displayText(width/2, height/2, 33, "COMPOSER VOTRE NUMÉRO \n LENTEMENT");
+    if (theTimer.sequence(2000, 6000)) {
+      theMsg.displayText(width/2, height/2, 33, "COMPOSER VOTRE NUMÉRO \n LENTEMENT", true);
     }
 
-    if ((theTimer.sequence(13000, 23000))&&(dialedNumbers.size()<3)) {  
-      theMsg.displayText(width/2, height/2, 33, "IL RESTE 10 SECONDES...");
+    if ((theTimer.sequence(15000, 23000))&&(dialedNumbers.size()<3)) {
+      theMsg.displayText(width/2, height/2, 33, "IL RESTE 10 SECONDES...", true);
     }
 
     if (myPort.available()>0) {
@@ -82,7 +92,8 @@ public class ReceiveData implements State {
     }
     pushStyle();
     fill(255);
-    theMsg.displayText(width/2, height/2+80, 100, buffer);
+    theMsg.displayText(width/2, height/2, 33, "IL RESTE 10 SECONDES...", true);
+    theMsg.displayText(width/2, height/2+80, 100, buffer, true);
     popStyle();
   }
 
@@ -111,12 +122,14 @@ public class DisplayMessage implements State {
 
   @Override
     public void executeState() {
-    if (theTimer.sequence(1000, 2000)) {
-      theMsg.displayText(width/2, height/2, 33, "Merci, bien reçu ;–)");
+    if (theTimer.sequence(1000, 3000)) {
+      theMsg.displayText(width/2, height/2, 33, "VOUS AVEZ COMPOSÉ \n"+ buffer, true);
     }
-    if (theTimer.sequence(3000, 2000)) {
-      theMsg.displayText(width/2, height/2, 33, "VOUS AVEZ COMPOSÉ \n"+ buffer);
+    /*
+   if (theTimer.sequence(3000, 2000)) {
+      theMsg.displayText(width/2, height/2, 33, "VOUS AVEZ COMPOSÉ \n"+ buffer, true);
     }
+    */
   }
 
   public int returnElapsedTime() {
@@ -163,7 +176,7 @@ public class DisplaySketch implements State {
         currentScene.showCode();
       }
     } else {
-      theMsg.displayText(width/2, height/2, 33, "Hmmm, numéro pas reconnu...");
+      theMsg.displayText(width/2, height/2, 33, "Hmmm, numéro pas reconnu...", true);
     }
   }
 
@@ -213,11 +226,11 @@ public class endMenu implements State {
   @Override
     public void executeState() {
     if (theTimer.sequence(1000, 3000)) {
-      theMsg.displayText(width/2, height/2, 33, "Voulez-vous composer un autre ?");
+      theMsg.displayText(width/2, height/2, 33, "Voulez-vous composer un autre ?", true);
     }
 
     if (theTimer.sequence(4000, 3000)) {
-      theMsg.displayText(width/2, height/2, 33, "MERCI D'ATTENDRE LE MENU");
+      theMsg.displayText(width/2, height/2, 33, "MERCI D'ATTENDRE LE MENU", true);
     }
   }
 
@@ -227,6 +240,53 @@ public class endMenu implements State {
   }
 }
 
+/**
+ * Displays random sequence of sketches until user interacts with dial
+ *
+ */
+
+public class AutoMode implements State {
+  Text theTitle;
+  Timer theTimer;
+  String type;
+  Scene theScene;
+
+  public AutoMode() {
+    theTitle = new Text();
+    theTimer = new Timer(20000);
+    type = "AutoMode";
+    generateRandomSequence();
+    resetAll();
+    println("Auto State : This plays a random sequence of sketches");
+  }
+
+  public String getType() {
+    return type;
+  }
+
+  @Override
+    public void executeState() {
+    //theTitle.displayText(width/2, height/2.3, 133, "this is auto mode");
+    if (currentScene != null) {
+        currentScene.draw();
+        currentScene.showInfo();
+
+        if (myTimer.sequence(5000, 5000)) {
+          currentScene.showCode();
+        }
+    }
+
+    //Note : this is a global timer
+    if (myTimer.finished()) {
+        resetAll();
+      }
+  }
+
+  public int returnElapsedTime() {
+    int t = (int)theTimer.elapsedSeconds();
+    return t;
+  }
+}
 
 //////////////////////////////////////////////////////
 
@@ -234,9 +294,11 @@ public class StateManager implements State {
 
   private State myState;
   boolean  isActive;
+  //private Timer theTimer;
 
   public void setState(State _theState) {
     this.myState = _theState;
+    //theTimer = new Timer(10000);
   }
 
   public String getType() {

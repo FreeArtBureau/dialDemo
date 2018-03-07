@@ -16,10 +16,10 @@ abstract class Scene {
   PFont infoFont, systemFont, codeFont, titleFont;
 
   public Scene(){
-    infoFont = createFont("Iosevka-Heavy", 30);
-    systemFont = createFont("Iosevka-light", 15);
-    codeFont = createFont("Iosevka-light", 12);
-    titleFont = createFont("Iosevka-medium-oblique", 24);
+    infoFont = createFont("Gintronic-Bold", 30);
+    systemFont = createFont("Gintronic-Thin", 15);
+    codeFont = createFont("iosevka-light", 12);
+    titleFont = createFont("Gintronic-Bold", 24);
   }
 
 
@@ -50,7 +50,10 @@ abstract class Scene {
    */
   public void showSettings() {
     pushStyle();
-    textAlign(LEFT);
+    rectMode(CORNER);
+    noStroke();
+    fill(0,73);
+    rect(25,0, 300, 283);
     String out = "";
     textFont(systemFont, 15);
     textSize(15);
@@ -58,10 +61,20 @@ abstract class Scene {
     out += "--------------------------\n";
     out += "fps: " + nf(frameRate, 0, 1) + "\n";
     //out += "current animation: " + author + "\n";
-    out += "current animation: " + currentSceneIndex + "\n";//
+    out += "current animation: " + currentSceneIndex + "\n";
+    out += "auto mode on/off: " + autoMode + "\n";
+
+    out += "Keys: \n";
+    out += "arrow right - next scene \n";
+    out += "arrow left - last scene \n";
+    out += "d - show code \n";
+    out += "a - activate auto mode \n";
+    out += "i - show info \n";
+
+    out += "--------------------------\n";
     pushMatrix();
     translate(45, 20);
-    fill(0, 200, 255);
+    fill(255, 0, 0);
     text(out, 0, 0);
     popMatrix();
     popStyle();
@@ -84,17 +97,17 @@ abstract class Scene {
     popStyle();
 
     pushStyle();
-    textFont(titleFont, 20);
+    textFont(titleFont, 24);
     textSize(24);
     fill(200, 255, 0);
     text(title, 0, 28);
     popStyle();
 
     pushStyle();
-    textFont(systemFont, 14);
-    textSize(16);
+    textFont(systemFont, 18);
+    textSize(18);
     fill(0, 200, 255);
-    text("codé par "+student, 0, 60);
+    text("codé par "+student, 0, 50);
     popStyle();
     popMatrix();
 

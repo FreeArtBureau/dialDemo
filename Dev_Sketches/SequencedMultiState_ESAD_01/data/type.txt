@@ -1,0 +1,1 @@
+Dial A Demo est une installation interactive pour présenter l’exerciseFormes Variables. L’exercise consiste à concevoir une composition de  formes géométriques simples en mouvement. Le but de l’exercise est    d’introduire le concept de la variable dans le médium du code. Ensuitel’étudiant explore cette notion à travers ses compositions graphiques.
