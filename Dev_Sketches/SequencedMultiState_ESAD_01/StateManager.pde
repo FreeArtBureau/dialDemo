@@ -157,7 +157,8 @@ public class DisplaySketch implements State {
     type = "DisplaySketch";
     println("State 4 : We are now displaying the sketch chosen");
     //theScene = currentScene;
-    chooseSketch();
+    //chooseSketch();
+    chooseASketch();
     isError = false;
   }
 
@@ -202,46 +203,38 @@ public class DisplaySketch implements State {
       isError = true;
     }
   }
-}
 
-/*
-public class endMenu implements State {
-
-  Text theMsg;
-  Timer theTimer;
-  String type;
-
-  public endMenu() {
-    theMsg = new Text();
-    theTimer = new Timer(7000);
-    type = "endMenu";
-    println("State 5 : We are now displaying the final menu");
-  }
-
-  public String getType() {
-    return this.type;
-  }
-
-  @Override
-    public void executeState() {
-    if (theTimer.sequence(1000, 3000)) {
-      theMsg.displayText(width/2, height/2, 33, "Voulez-vous composer un autre ?", true);
-    }
-
-    if (theTimer.sequence(4000, 3000)) {
-      theMsg.displayText(width/2, height/2, 33, "MERCI D'ATTENDRE LE MENU", true);
+  private void chooseASketch() {
+    String s = dialedNumbers.get(0);
+    String s2 = dialedNumbers.get(1);
+    int i = computeBaseTen(s, s2);
+    currentSceneIndex = i;
+    if (i < theScenes.size()) {
+      currentScene = theScenes.get( currentSceneIndex );
+      println("Current scene chosen : "+currentSceneIndex);
+      theScene = currentScene;
+    } else {
+      isError = true;
     }
   }
 
-  public int returnElapsedTime() {
-    int t = (int)theTimer.elapsedSeconds();
-    return t;
+  private int computeBaseTen(String _s, String _s2){
+    int n = 0;
+    int b1 = Integer.parseInt(_s);
+    int b2 = Integer.parseInt(_s2);
+    if(b1 == 0) {
+      n = b2;
+    }
+    if(b1>0) {
+     n = (b1 * 10 ) + b2;
+   }
+   return n;
   }
 }
-*/
+
 
 /**
- * Displays random sequence of sketches until user interacts with dial
+ * Displays random sequence of sketches
  *
  */
 
@@ -266,7 +259,7 @@ public class AutoMode implements State {
 
   @Override
     public void executeState() {
-    //theTitle.displayText(width/2, height/2.3, 133, "this is auto mode");
+
     if (currentScene != null) {
         currentScene.draw();
         currentScene.showInfo();
@@ -275,7 +268,6 @@ public class AutoMode implements State {
           currentScene.showCode();
         }
     }
-
     //Note : this is a global timer
     if (myTimer.finished()) {
         resetAll();
@@ -294,11 +286,9 @@ public class StateManager implements State {
 
   private State myState;
   boolean  isActive;
-  //private Timer theTimer;
 
   public void setState(State _theState) {
     this.myState = _theState;
-    //theTimer = new Timer(10000);
   }
 
   public String getType() {

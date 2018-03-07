@@ -4,7 +4,6 @@
  *
  */
 
-
 abstract class Scene {
 
   String student = " ";
@@ -22,15 +21,12 @@ abstract class Scene {
     titleFont = createFont("Gintronic-Bold", 24);
   }
 
-
   abstract void setup();
   abstract void draw();
-  //abstract void mousePressed();
-  //abstract void keyPressed();
 
-  /*
+  /**
     * Set scene dimensions depending on gloable screen size settings
-   */
+    */
   public void setSceneDimensions() {
     this.sceneWidth = screenSizeW;
     this.sceneHeight = screenSizeH;

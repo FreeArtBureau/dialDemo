@@ -1,27 +1,27 @@
 /*
  ------------------------
  PROJECT : PERSONAL/TEACHING
- 29.11.2017
+ 2017/2018
 
  -------------------------
- Sketch : SEQUENCED MULTI STATE_01
+ Sketch : SEQUENCED MULTI STATE_ESAD_01
  Sketch Version : 0.1
  Langauge : Processing
  Version : 3.3
 
  * Summary : Simple tool for presenting multiple Processing
- *           sketches all in one program. 
+ *           sketches all in one program.
  *           Implements State Pattern for sequenced animation
  *           of interdependant interactive input from an old
  *           telephone dial.
  *
- * Author :  MWebster 2017 : www.fabprojects.codes
- * Info :    Read more about this on the info tab.
+ * Author :  MWebster 2018 : www.fabprojects.codes
 
  -------------------------
  LIBRARIES & FONTS
 
  - Iosevka : https://github.com/be5invis/Iosevka
+ - Gintronic : https://bboxtype.com/typefaces/Gintronic/#!layout=specimen
 
 
  -------------------------
@@ -50,8 +50,8 @@
   -------------------------
     LICENSE
 
-    MSEQUENCED MULTI STATE_01
-    Copyright (C) 2017 Mark Webster
+    SEQUENCED MULTI STATE_ESAD_01
+    Copyright (C) 2018 Mark Webster
     www.fabprojects.codes
 
     This program is free software: you can redistribute it and/or modify

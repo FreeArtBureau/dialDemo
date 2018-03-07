@@ -7,6 +7,11 @@
     int sceneNum;
     int[] randScene;
 
+    // variables for keys
+    boolean showSettings = true;
+    boolean showCode = false;
+    boolean autoMode = false;
+
 
 /**
  * Init scenes : size & other setup configs
@@ -21,11 +26,7 @@ void setupScenes() {
   }
 }
 
-/*
-void clearScene() {
-  background(0, 0, 33);
-}
-*/
+
 void resetPort() {
   myPort.clear();
   myPort.stop();
@@ -48,87 +49,31 @@ void keyPressed() {
   if(key == 'a'){
     autoMode = !autoMode;
   }
-  if (key == 'r') { }
   if (key == 'i') {
     showSettings = !showSettings;
   }
   if (key == 'd') {
     showCode = !showCode;
   }
-}
-
-/////////////////////////////: STATES >>> manages different states and switching
-void stateListener() {
-  currentState.returnElapsedTime();
-  String s = theState.getType();
-
-  // perhaps implement a global boolean for isAuto ?
-  if ((s.equals("MainTitle"))&&(currentState.returnElapsedTime()>=20)) {
-     theState = new AutoMode();
-     currentState.setState(theState);
+  if(keyCode == RIGHT){
+     if (currentSceneIndex <theScenes.size()-1) {
+       currentSceneIndex++;
+       currentScene = theScenes.get( theScenes.indexOf(currentScene)+1 );
+     }
+     //update timer
+     myTimer.reset();
    }
-
-  //If the dial is used, switch from main menu to Receiving Data
-
- if (myPort.available()>0) {
-   if((s.equals("MainTitle")) || (s.equals("AutoMode"))) {
-    theState = new ReceiveData();
-    currentState.setState(theState);
-  }
-}
-
-  //If Receiving Data has finished, switch to display msg
-
-  if ((dialedNumbers.size()==3)&&(s.equals("ReceiveData"))) {
-    theState = new DisplayMessage();
-    currentState.setState(theState);
-  }
-
-  //If display msg has finished, switch to display sketch
-
-  if ((s.equals("DisplayMessage"))&&(currentState.returnElapsedTime()>=7)) {
-    theState = new DisplaySketch();
-    currentState.setState(theState);
-  }
-
-  //If display sketch has finished, switch to final menu
-  // OR STRAIGHT BACK TO MAIN MENU?
-
-  if ((s.equals("DisplaySketch"))&&(currentState.returnElapsedTime()>=sceneMaxSeconds)) {
-    //theState = new endMenu();
-    //currentState.setState(theState);
-    resetPort();
-    initState();
-  }
-
-  //If end msg has finished, switch to main menu
-/*
-  if ((s.equals("endMenu"))&&(currentState.returnElapsedTime()>=8)) {
-    resetPort();
-    initState();
-  }
-
-  // If idle in Main Title state for over 16 seconds, reset all
-  // !!!!!!!!! change
-
-  if ((currentState.returnElapsedTime()>=8)&&(s.equals("MainTitle"))) {
-    resetPort();
-    initState();
-  }
-  */
-  // If idle in any state other than MainTitle for over 20 seconds, return to main menu
-  // !!!!!!!!! change  : THIS SEEMS TO BE A LITTLE ODD IN FUNCTIONING
-
-  if((s.equals("ReceiveData")&&(currentState.returnElapsedTime()>=30)) ){
-    resetPort();
-    initState();
-  }
-
+   // get prev scene
+   if(keyCode == LEFT){
+     if (currentSceneIndex > 0) {
+       currentSceneIndex--;
+       currentScene = theScenes.get(
+      theScenes.indexOf(currentScene)-1 );
+     }
+   }
 }
 
 // GENERATES A NEW RANDOM SEQUENCE FOR ANIMATION PLAY.
-// EACH SEQUENCE IS UNIQUE & NEVER REPEATS AN ANIMATION ;–)
-// SEE checkRandom() FUNCTION BELOW FOR IMPLEMENTING THIS.
 void generateRandomSequence() {
   currentRandScene = 0;
   int scenesMax = theScenes.size();
@@ -152,8 +97,6 @@ void generateRandomSequence() {
 }
 ////////////////////////////////////////////////////////////////////
 void resetAll() {
-  //background(0); // clear screen
-
   myTimer.reset();
   myTimer = new Timer(myTimerMaxSeconds); // 25 second timer
 

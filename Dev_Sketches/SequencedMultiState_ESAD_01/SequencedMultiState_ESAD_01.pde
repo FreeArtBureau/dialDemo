@@ -1,17 +1,13 @@
 /*
  * :::::::::::::::::
- * Multi-Scene Tool
+ * DIAL A DEMO 2018
  * :::::::::::::::::
  *
- * Sketch : SEQUENCED MULTI STATE_01
+ * Sketch : SEQUENCED MULTI STATE ESAD
  * Git    : https://github.com/FreeArtBureau/dialDemo
  * Note   : Read Info tab
  *
  */
-
-// NOTES : add date : TO_DO
-// *       Student sketches added
-// *
 
 import processing.serial.*;
 
@@ -29,9 +25,6 @@ int currentSceneIndex = 0;
 int screenSizeW = 1280;
 int screenSizeH = 760;
 
-boolean showSettings = true;
-boolean showCode = false;
-boolean autoMode = false;
 int sceneMaxSeconds = 8; // max seconds for playing sketch in interactive mode
 int myTimerMaxSeconds = 14000; // max seconds for playing sketch in auto mode
 
@@ -52,33 +45,18 @@ void setup() {
   myTimer = new Timer( myTimerMaxSeconds ); // 25000: 25 second timer
   addScenes();
   setupScenes();
-  /*  if(autoMode){
-       generateRandomSequence();
-       resetAll();
-     }else {
-       setupScenes();
-     }
-     */
   initState();
 }
 
 
 void draw() {
-  //pushStyle();
   background(0);
   currentState.executeState();
   stateListener();
 
-  ///////////////////////////// > sequenced / key actions
   if (showSettings) {
     currentScene.showSettings();
   }
-  /*
-  if (showCode) {
-    currentScene.showSettings();
-  }
-  */
-  //popStyle();
 }
 
 
@@ -97,4 +75,31 @@ void addScenes() {
   theScenes.add( new SceneTen() );
   theScenes.add( new SceneEleven() );
   theScenes.add( new SceneTwelve() );
+  theScenes.add( new SceneThirteen() );
+  theScenes.add( new SceneFourteen() );
+  theScenes.add( new SceneFifteen() );
+  theScenes.add( new SceneSixteen() );
+  theScenes.add( new SceneSeventeen() );
+  theScenes.add( new SceneEighteen() );
+  theScenes.add( new SceneNineteen() );
+  theScenes.add( new SceneTwenty() );
+  theScenes.add( new SceneTwentyOne() );
+  theScenes.add( new SceneTwentyTwo() );
+  theScenes.add( new SceneTwentyThree() );
+  theScenes.add( new SceneTwentyFour() );
+  theScenes.add( new SceneTwentyFive() );
+  theScenes.add( new SceneTwentySix() );
+  theScenes.add( new SceneTwentySeven() );
+  theScenes.add( new SceneTwentyEight() );
+  theScenes.add( new SceneTwentyNine() );
+  theScenes.add( new SceneThirty() );
+  theScenes.add( new SceneThirtyOne() );
+  theScenes.add( new SceneThirtyTwo() );
+  theScenes.add( new SceneThirtyThree() );
+  theScenes.add( new SceneThirtyFour() );
+  theScenes.add( new SceneThirtyFive() );
+  theScenes.add( new SceneThirtySix() );
+  theScenes.add( new SceneThirtySeven() );
+  theScenes.add( new SceneThirtyEight() );
+  theScenes.add( new SceneThirtyNine() );
 }
