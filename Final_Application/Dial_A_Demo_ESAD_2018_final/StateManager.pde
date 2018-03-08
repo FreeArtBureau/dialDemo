@@ -213,7 +213,12 @@ public class DisplaySketch implements State {
       currentScene = theScenes.get( currentSceneIndex );
       println("Current scene chosen : "+currentSceneIndex);
       theScene = currentScene;
-    } else {
+    }
+    else if(currentSceneIndex == 39){
+      currentScene = theScenes.get( (int)random(40) );
+      println("Current scene chosen : "+currentSceneIndex);
+      theScene = currentScene;
+      } else {
       isError = true;
     }
   }

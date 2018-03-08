@@ -25,21 +25,21 @@ int currentSceneIndex = 0;
 int screenSizeW = 1280;
 int screenSizeH = 760;
 
-int sceneMaxSeconds = 8; // max seconds for playing sketch in interactive mode
-int myTimerMaxSeconds = 14000; // max seconds for playing sketch in auto mode
+int sceneMaxSeconds = 16; // max seconds for playing sketch in interactive mode
+int myTimerMaxSeconds = 25000; // max seconds for playing sketch in auto mode
 
 Timer myTimer;
 
 /////////////////////////////////////// SETUP
 void settings() {
-  size(screenSizeW, screenSizeH, P3D);
-  //fullScreen(P3D);
+  //size(screenSizeW, screenSizeH, P3D);
+  fullScreen(P3D);
   smooth(4);
 }
 
 void setup() {
   background(0, 0, 33);
-  //noCursor(); // CURSOR ?
+  noCursor(); // CURSOR ?
   String portName = Serial.list()[3];
   myPort = new Serial(this, portName, 9600);
   myTimer = new Timer( myTimerMaxSeconds ); // 25000: 25 second timer

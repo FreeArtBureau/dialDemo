@@ -7,7 +7,7 @@ class SceneThirtyFive extends Scene {
       float r = 30;
 
     void setup() {
-      student = "Emilie Noyer";
+      student = "Émilie Noyer";
       title = "Wallpaper_#002";
       sketchCode = "sketch_34.pde";
       code = loadPde(sketchCode);

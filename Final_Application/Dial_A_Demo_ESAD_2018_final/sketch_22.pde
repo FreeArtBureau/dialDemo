@@ -25,7 +25,7 @@ class SceneTwentyTwo extends Scene {
      ellipse(width/2,height/2,width*.6, height*.6);
 
      for (int x=2*step; x<width-2*step+1; x += step) {
-       float sw = map(sin(theta+(TWO_PI/num*i)), -1, 1, 2.5, 20);/
+       float sw = map(sin(theta+(TWO_PI/num*i)), -1, 1, 2.5, 20);
        float edge = 2*step;
        stroke(#FFCBBF);
        strokeWeight(sw);
