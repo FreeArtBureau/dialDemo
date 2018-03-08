@@ -19,7 +19,6 @@
 
 void setupScenes() {
   currentScene = theScenes.get(currentSceneIndex);
-  //println("Current scene chosen : "+currentSceneIndex);
   for (Scene s : theScenes) {
     s.setSceneDimensions();
     s.setup();
@@ -110,7 +109,7 @@ void resetAll() {
     theScene.setup();
   }
 
-  // CHECK TO SEE IF CURRENT RANDOM SEQUENCE HAS FINISHED. IF YES, GENERATE ANOTHER NEW SEQUENCE
+  // Generate new seq if arrived at end of last
   if (currentRandScene<randScene.length-1) {
     currentRandScene++;
   } else {

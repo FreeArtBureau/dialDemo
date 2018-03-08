@@ -26,8 +26,6 @@ public class MainTitle implements State {
     theTimer = new Timer(20000);
     type = "MainTitle";
     println("State 1 : This is the main menu");
-    //generateRandomSequence();
-    //resetAll();
   }
 
   public String getType() {
@@ -126,11 +124,6 @@ public class DisplayMessage implements State {
     if (theTimer.sequence(1000, 3000)) {
       theMsg.displayText(width/2, height/2, 33, "VOUS AVEZ COMPOSÉ \n"+ buffer, true);
     }
-    /*
-   if (theTimer.sequence(3000, 2000)) {
-      theMsg.displayText(width/2, height/2, 33, "VOUS AVEZ COMPOSÉ \n"+ buffer, true);
-    }
-    */
   }
 
   public int returnElapsedTime() {
@@ -140,7 +133,7 @@ public class DisplayMessage implements State {
 }
 
 /**
- * THis state displays the chosen sketch
+ * This state displays the chosen sketch
  *
  */
 public class DisplaySketch implements State {
@@ -156,8 +149,6 @@ public class DisplaySketch implements State {
     theTimer = new Timer(9000); // remove?
     type = "DisplaySketch";
     println("State 4 : We are now displaying the sketch chosen");
-    //theScene = currentScene;
-    //chooseSketch();
     chooseASketch();
     isError = false;
   }
@@ -186,23 +177,9 @@ public class DisplaySketch implements State {
   }
 
   /**
-   * Will need to implement a 2 digit parse
+   * Chooses a sketch based on dialed number
    *
    */
-  private void chooseSketch() {
-    //get last number of dialed number
-    String s = dialedNumbers.get(2);
-    println(s);
-    int n = Integer.parseInt(s);
-    currentSceneIndex = n;
-    if (n < theScenes.size()) {
-      currentScene = theScenes.get( currentSceneIndex );
-      println("Current scene chosen : "+currentSceneIndex);
-      theScene = currentScene;
-    } else {
-      isError = true;
-    }
-  }
 
   private void chooseASketch() {
     String s = dialedNumbers.get(0);
@@ -223,6 +200,10 @@ public class DisplaySketch implements State {
     }
   }
 
+  /**
+   * Returns base10 number from 2 values stored as Strings
+   *
+   */
   private int computeBaseTen(String _s, String _s2){
     int n = 0;
     int b1 = Integer.parseInt(_s);
