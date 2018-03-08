@@ -8,7 +8,7 @@ class SceneTen extends Scene {
     void setup() {
       student = "Paul Delabre";
       artist = "";
-      title = "Form_###";
+      title = "Form_000";
       sketchCode = "sketch_10.pde";
       code = loadPde(sketchCode);
 

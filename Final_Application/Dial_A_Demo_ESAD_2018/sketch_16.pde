@@ -9,8 +9,7 @@ class SceneSixteen extends Scene {
 
     void setup() {
       student = "Yena Choi";
-      //artist = "Piet Mondrian";
-      title = "dessin_16";
+      title = "White Flowers";
       pg = createGraphics(screenSizeW,screenSizeH);
       sketchCode = "sketch_16.pde";
       code = loadPde(sketchCode);

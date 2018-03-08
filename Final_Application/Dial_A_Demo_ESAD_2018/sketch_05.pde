@@ -9,7 +9,7 @@ class SceneFive extends Scene {
 
   void setup() {
     student = "Gabrielle Heynen";
-    title = "Square Anime";
+    title = "Pomme de pain";
     artist = " ";
     sketchCode = "sketch_05.pde";
     code = loadPde(sketchCode);

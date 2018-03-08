@@ -11,8 +11,7 @@ class SceneFifteen extends Scene {
 
     void setup() {
       student = "Lucile Billot";
-      //artist = "Piet Mondrian";
-      title = "Formes_###";
+      title = "Anti-perspective";
       sketchCode = "sketch_15.pde";
       code = loadPde(sketchCode);
 

@@ -7,7 +7,6 @@ class SceneEight extends Scene {
 
     void setup() {
       student = "Margot Benard";
-      artist = "";
       title = " Sea Shells";
       sketchCode = "sketch_08.pde";
       code = loadPde(sketchCode);

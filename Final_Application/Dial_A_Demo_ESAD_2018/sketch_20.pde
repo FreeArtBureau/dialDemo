@@ -10,7 +10,6 @@ class SceneTwenty extends Scene {
 
     void setup() {
       student = "Ariane Dubois";
-      //artist = "Piet Mondrian";
       title = "Ondulation";
       sketchCode = "sketch_20.pde";
       code = loadPde(sketchCode);

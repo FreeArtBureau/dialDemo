@@ -32,8 +32,8 @@ class SceneThirtyNine extends Scene {
       translate(0, screenSizeH/3);
 
         background(0,0,33);
-       float xMov = cos(frameCount* 0.05) * 760;
-       float yMov = sin(frameCount* 0.05) * 60;
+       float xMov = 50 + cos(frameCount* 0.05) * 760;
+       float yMov = 20+sin(frameCount* 0.05) * 80;
 
        for (Bar b : bars) {
          b.update(xMov, yMov);

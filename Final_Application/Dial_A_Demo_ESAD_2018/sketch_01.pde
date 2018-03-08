@@ -14,7 +14,7 @@ class SceneOne extends Scene {
   void setup() {
     background(0);
     noFill();
-    student = "MW";
+    student = "Lucile Billot";
     title = "Pull";
     sketchCode = "sketch_01.pde";
     code = loadPde(sketchCode);

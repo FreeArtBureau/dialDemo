@@ -12,7 +12,6 @@ class SceneNine extends Scene {
 
     void setup() {
       student = "Julie Colas";
-      artist = " ";
       title = "Dotted Lines";
       sketchCode = "sketch_09.pde";
       code = loadPde(sketchCode);

@@ -7,7 +7,7 @@ class SceneFour extends Scene {
 
   void setup() {
     student = "Victor Boonen";
-    title = "moiré_000";
+    title = "Moiré collection";
     sketchCode = "sketch_04.pde";
     code = loadPde(sketchCode);
   }

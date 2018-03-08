@@ -7,7 +7,6 @@ class SceneNineteen extends Scene {
 
     void setup() {
       student = "Ariane Dubois";
-      //artist = "Piet Mondrian";
       title = "Wobble";
       sketchCode = "sketch_19.pde";
       code = loadPde(sketchCode);

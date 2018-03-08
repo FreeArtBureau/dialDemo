@@ -14,8 +14,7 @@ class SceneTwentyOne extends Scene {
 
     void setup() {
       student = "Lucile Billot";
-      //artist = "Piet Mondrian";
-      title = "lights_###";
+      title = "Light Room";
       sketchCode = "sketch_21.pde";
       code = loadPde(sketchCode);
       sph=new Sphere(180, PI/8); //180 taille de la sphere

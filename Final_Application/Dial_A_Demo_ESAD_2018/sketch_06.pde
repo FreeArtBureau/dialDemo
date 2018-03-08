@@ -8,9 +8,8 @@ class SceneSix extends Scene {
   int margeY = 120;
 
   void setup() {
-    student = "Jade Randnon";
-    title = "Motif";
-    artist = " ";
+    student = "Jade Randon";
+    title = "Noise map";
     sketchCode = "sketch_06.pde";
     code = loadPde(sketchCode);
   }

@@ -11,7 +11,6 @@ class SceneTwelve extends Scene {
 
     void setup() {
       student = "Charlie Derouault";
-      artist = "";
       title = "BEZ_lignes";
       sketchCode = "sketch_12.pde";
       code = loadPde(sketchCode);

@@ -7,7 +7,7 @@ class SceneThirty extends Scene {
     float x;
     void setup() {
       student = "Ariane Dubois";
-      title = "Ondulations";
+      title = "Sas temporel";
       sketchCode = "sketch_30.pde";
       code = loadPde(sketchCode);
 

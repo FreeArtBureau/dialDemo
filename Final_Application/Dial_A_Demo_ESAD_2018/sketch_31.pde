@@ -10,7 +10,7 @@ class SceneThirtyOne extends Scene {
 
     void setup() {
       student = "Perrine Japaud";
-      title = "Wallpaper I";
+      title = "Dancefloor";
       sketchCode = "sketch_31.pde";
       code = loadPde(sketchCode);
 

@@ -11,8 +11,7 @@ class SceneTwentyFive extends Scene {
 
     void setup() {
       student = "Leo Fouan";
-      //artist = "Piet Mondrian";
-      title = "Bricks";
+      title = "Bricks Wave";
       sketchCode = "sketch_25.pde";
       code = loadPde(sketchCode);
 

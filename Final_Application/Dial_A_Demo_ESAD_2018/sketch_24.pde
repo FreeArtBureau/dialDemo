@@ -13,7 +13,6 @@ class SceneTwentyFour extends Scene {
 
     void setup() {
       student = "Mandy Elby";
-      //artist = "Piet Mondrian";
       title = "aMaze";
       sketchCode = "sketch_24.pde";
       code = loadPde(sketchCode);

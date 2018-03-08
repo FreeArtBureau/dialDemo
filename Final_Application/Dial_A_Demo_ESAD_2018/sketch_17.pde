@@ -7,8 +7,7 @@ class SceneSeventeen extends Scene {
 
     void setup() {
       student = "Julie Bouchardon";
-      //artist = "Piet Mondrian";
-      title = "Vague";
+      title = "Vague à l'âme";
       sketchCode = "sketch_17.pde";
       code = loadPde(sketchCode);
 

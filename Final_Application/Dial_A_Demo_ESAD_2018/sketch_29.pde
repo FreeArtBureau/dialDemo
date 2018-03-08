@@ -7,7 +7,7 @@ class SceneTwentyNine extends Scene {
 
     void setup() {
       student = "Elise Guerrier";
-      title = "Spiro_#02";
+      title = "Confusion";
       sketchCode = "sketch_29.pde";
       code = loadPde(sketchCode);
 

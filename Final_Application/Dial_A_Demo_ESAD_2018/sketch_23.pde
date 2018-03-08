@@ -7,7 +7,6 @@ class SceneTwentyThree extends Scene {
 
     void setup() {
       student = "Julie Bouchardon";
-      //artist = "Piet Mondrian";
       title = "Scribble";
       sketchCode = "sketch_23.pde";
       code = loadPde(sketchCode);

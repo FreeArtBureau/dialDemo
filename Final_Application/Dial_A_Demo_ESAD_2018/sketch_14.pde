@@ -8,7 +8,6 @@ class SceneFourteen extends Scene {
 
     void setup() {
       student = "Alicia Beyaert";
-      //artist = "Piet Mondrian";
       title = "?????";
       sketchCode = "sketch_14.pde";
       code = loadPde(sketchCode);
