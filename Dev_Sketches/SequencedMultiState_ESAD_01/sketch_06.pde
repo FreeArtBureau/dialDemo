@@ -17,6 +17,7 @@ class SceneSix extends Scene {
 
   void draw() {
     background(0);
+    pushStyle();
     noiseDetail(2, 0.2);
     noFill();
     stroke(250);
@@ -32,5 +33,6 @@ class SceneSix extends Scene {
         popMatrix();
       }
     }
+    popStyle();
   }
 }

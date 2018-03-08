@@ -13,7 +13,6 @@ class SceneEighteen extends Scene {
 
     void setup() {
       student = "Arnaud Chemin";
-      artist = "Bridget Riley";
       title = "Bridget Riley";
       sketchCode = "sketch_18.pde";
       code = loadPde(sketchCode);

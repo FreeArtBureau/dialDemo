@@ -15,6 +15,7 @@ class SceneTwo extends Scene {
 /////////////////////////// DRAW ////////////////////////////
 
 void draw() {
+  pushStyle();
   background(0);
   int numX = 160;
   int numY = 80;
@@ -45,6 +46,7 @@ void draw() {
     }
   }
   popMatrix();
+  popStyle();
 }
 
 }

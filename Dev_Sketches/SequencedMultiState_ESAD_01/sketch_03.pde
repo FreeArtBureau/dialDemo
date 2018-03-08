@@ -15,6 +15,7 @@ class SceneThree extends Scene {
 
   void draw() {
   background(0);
+  pushStyle();
   int a = 0;
   for (int i=800; i>0; i-=30) {
       a++;
@@ -33,5 +34,6 @@ class SceneThree extends Scene {
 
       speed += 0.035;
     }
+    popStyle();
 }
 }

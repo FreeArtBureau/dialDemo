@@ -27,7 +27,7 @@ class SceneTwentyTwo extends Scene {
     //stroke(r, v, b);
     stroke(255);
     strokeWeight(10);
-    translate(screenSizeW/2, screenSizeH/8);
+    translate(screenSizeW/2, screenSizeH/2);
 
     for (int x=50; x<200; x+=8) {
       for (int y=50; y<200; y+=8) {

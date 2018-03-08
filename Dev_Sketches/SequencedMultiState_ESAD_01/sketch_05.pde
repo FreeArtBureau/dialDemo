@@ -9,7 +9,7 @@ class SceneFive extends Scene {
 
   void setup() {
     student = "Gabrielle Heynen";
-    title = "Square Anime ???";
+    title = "Square Anime";
     artist = " ";
     sketchCode = "sketch_05.pde";
     code = loadPde(sketchCode);
@@ -18,6 +18,7 @@ class SceneFive extends Scene {
 
   void draw() {
     background(255);
+    pushStyle();
     rectMode(CENTER);
     strokeWeight(30);
     stroke(0);
@@ -32,6 +33,7 @@ class SceneFive extends Scene {
       scale(0.90);
       rect(0, 0, 400, 400);
     }
+    popStyle();
     popMatrix();
   }
 }

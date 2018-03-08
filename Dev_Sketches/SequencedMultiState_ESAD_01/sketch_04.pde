@@ -14,6 +14,7 @@ class SceneFour extends Scene {
 
   void draw() {
     background(0, 0, 33);
+    pushStyle();
     pushMatrix();
     translate(sceneWidth/4, 0);
 
@@ -22,6 +23,7 @@ class SceneFour extends Scene {
     circles2(450, 360, 0.05, 40);
     circles3(550, 550, 0.06, 20);
     popMatrix();
+    popStyle();
   }
 
 

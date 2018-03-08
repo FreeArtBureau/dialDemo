@@ -22,6 +22,7 @@ class SceneOne extends Scene {
   }
 
   void draw() {
+    pushStyle();
     background(3,3, 43);
     stroke(255, 255, 0);
 
@@ -33,5 +34,6 @@ class SceneOne extends Scene {
     }
 
     theta += .05;
+    popStyle();
   }
 }

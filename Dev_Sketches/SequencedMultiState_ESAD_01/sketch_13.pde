@@ -4,52 +4,28 @@
 
 class SceneThirteen extends Scene {
 
-    int compteur;
-
+    float x, y;
+    
     void setup() {
-      student = "Charly";
-      artist = "";
-      title = "B_&_W";
+      student = "Bruce Bligny";
+      title = "Discovery";
       sketchCode = "sketch_13.pde";
       code = loadPde(sketchCode);
-      compteur= 0;
 
     }
 
     void draw() {
-      pushMatrix();
       pushStyle();
-      //translate(screenSizeW/2, screenSizeH/2);
-
-      noStroke();
-      compteur = compteur + 1;
-
-      fill(0, 0, 0);
-      rect(0, 0, screenSizeW*2, screenSizeH*2);
-
-      fill(255, 255, 255);
-      rect(0, screenSizeH/2, screenSizeW/2, screenSizeH/2);
-      rect(screenSizeW/2, 0, screenSizeW/2, screenSizeH/2);
-
-      fill(0, 0, 0);
+      background(255);
       pushMatrix();
-      translate(250, 250);
-      rotate(radians(compteur));
-      ellipse(screenSizeW/2, screenSizeH/2, 125, 125);
-
-      fill(255, 255, 255);
-      compteur = compteur + 0;
-      rotate(radians(compteur));
-
-      fill(0, 0, 0);
-      //rect(0, 0, screenSizeW/2, screenSizeH/2); // i prefer without
-      rect(screenSizeW/2, screenSizeH/2, screenSizeW/2, screenSizeH/2);
-
-      fill(255, 255, 255);
-      ellipse(screenSizeW/2, screenSizeH/2, 125, 125);
+      translate(screenSizeW/2, screenSizeH/2);
+      fill(0);
+      stroke(255);
+      rotate(x);
+      sphere(y);
       popMatrix();
-
+      x=x+0.05;
+      y=sin(frameCount*0.0025) * 250;
       popStyle();
-      popMatrix();
     }
 }
