@@ -9,6 +9,9 @@
 
 Interactive installation for ésad d'Amiens students 2017/18.
 
+<img width="1051" alt="screen shot 2018-03-12 at 11 39 09" src="https://user-images.githubusercontent.com/1027891/37279105-113bd5fc-25ea-11e8-91b5-a09fcc57de0d.png">
+
+
 ## Contents
 
 * Student Sketches
